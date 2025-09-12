@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Builder
@@ -16,4 +17,6 @@ public class ErrorResponseDTO {
     private Integer errorStatusCode;
 
     private String uri;
+
+    private List<String> errors;
 }

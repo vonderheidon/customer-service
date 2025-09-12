@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-public class ScheduleRequestDTO {
+public class SchedeUpdateRequestDTO {
 
     private Long vetId;
 
