@@ -1,6 +1,9 @@
 package br.com.catolicapb.customer_service.enums;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Objects;
 
 public enum ScheduleStatus {
 
@@ -20,7 +23,11 @@ public enum ScheduleStatus {
         return value;
     }
 
+    @JsonCreator
     public static ScheduleStatus fromJson(String value) {
+        if (Objects.isNull(value) || value.isEmpty()) {
+            return ScheduleStatus.OPEN;
+        }
         for (ScheduleStatus scheduleStatus : ScheduleStatus.values()) {
             if (scheduleStatus.value.equalsIgnoreCase(value)) {
                 return scheduleStatus;

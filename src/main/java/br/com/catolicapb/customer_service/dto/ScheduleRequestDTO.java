@@ -15,6 +15,8 @@ public class ScheduleRequestDTO {
 
     private Long vetId;
 
+    private Long petId;
+
     @JsonFormat(pattern = "dd-MM-yyyy")
     @FutureOrPresent(message = "Data inválida")
     private LocalDate dateSchedule;
